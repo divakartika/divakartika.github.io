@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diva Kartika – Data Scientist</title>
+<meta name="description" content="Portfolio of Diva Kartika: forecasting, machine learning and LLM projects.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --ink:#15212b; --muted:#56646f;
+  --line:#0e7c6b; --accent:#e8a200; --rule:#d9ddd6;
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Figtree",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1519; --surface:#172027; --ink:#e8edf0; --muted:#93a3ae;
+    --line:#35c2a8; --accent:#f2b72e; --rule:#26323a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1519; --surface:#172027; --ink:#e8edf0; --muted:#93a3ae;
+  --line:#35c2a8; --accent:#f2b72e; --rule:#26323a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.5rem}
+
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0}
+nav a{margin-left:1.25rem;text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink)}
+#theme{margin-left:1.25rem;background:none;border:1px solid var(--rule);color:var(--ink);border-radius:999px;padding:.25rem .8rem;font:inherit;font-size:.9rem;cursor:pointer}
+
+.hero{padding:4rem 0 3rem}
+h1{font:700 clamp(2.4rem,7vw,4.2rem)/1.02 var(--head);letter-spacing:-.03em;margin:0 0 1.25rem}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:34rem;margin:0 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.65rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--line)}
+
+h2{font:700 1.7rem/1.2 var(--head);letter-spacing:-.02em;margin:0 0 .5rem}
+section{padding:2.5rem 0}
+.sub{color:var(--muted);margin:0 0 2rem}
+
+/* The one memorable element: projects sit on a route line */
+.route{position:relative;margin:0;padding:0 0 0 2.25rem;list-style:none}
+.route::before{content:"";position:absolute;left:.55rem;top:.6rem;bottom:.6rem;width:5px;background:var(--line);border-radius:3px}
+.stop{position:relative;margin-bottom:2rem}
+.stop::before{content:"";position:absolute;left:-2.25rem;top:.55rem;width:19px;height:19px;border-radius:50%;background:var(--bg);border:5px solid var(--line)}
+.stop.featured::before{border-color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:1.4rem 1.5rem}
+.card h3{font:700 1.3rem/1.25 var(--head);margin:0 0 .35rem}
+.card p{margin:.4rem 0 .9rem}
+.meta{color:var(--muted);font-size:.92rem;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0 0 1rem;list-style:none}
+.tags li{font-size:.85rem;padding:.15rem .6rem;border-radius:6px;background:color-mix(in srgb,var(--line) 14%,transparent)}
+.links a{margin-right:1.1rem;font-weight:600;text-decoration-color:var(--accent);text-underline-offset:4px}
+.badge{display:inline-block;font-size:.85rem;font-weight:600;color:#3a2a00;background:var(--accent);padding:.1rem .6rem;border-radius:6px;margin-bottom:.5rem}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem}
+.skills h3{font:700 1.05rem var(--head);margin:0 0 .4rem}
+.skills p{margin:0;color:var(--muted)}
+
+.job{margin-bottom:2rem}
+.job h3{font:700 1.15rem/1.3 var(--head);margin:0}
+.job ul{margin:.6rem 0 0;padding-left:1.2rem}
+.job li{margin-bottom:.4rem}
+.plain{margin:0;padding-left:1.2rem}
+.plain li{margin-bottom:.5rem}
+footer{border-top:1px solid var(--rule);margin-top:2rem;padding:2rem 0 3rem;color:var(--muted)}
+footer a{margin-right:1.25rem}
+
+@media (max-width:520px){nav a{margin-left:.8rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong style="font-family:var(--head)">Diva Kartika</strong>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>I build forecasting models, automation and LLM apps that teams actually use.</h1>
+      <p>I’m Diva, a data scientist in Jakarta with a Physics background and over 3 years of experience, from teaching data science to building forecasting models and LLM apps.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Each stop is a project I took from idea to something running.</p>
+      <ol class="route">
+        <li class="stop featured">
+          <div class="card">
+            <span class="badge">Featured</span>
+            <h3>Jak-Trans: a RAG chatbot for Jakarta public transport</h3>
+            <p>Answers questions about Jakarta public transport using hybrid text and vector search. Tuning retrieval raised Hit Rate from 71.2% to 97.3%, and LLM-as-a-judge evaluation lifted answer quality from 77.4% to 95.3%.</p>
+            <ul class="tags"><li>RAG</li><li>LLM evaluation</li><li>Streamlit</li><li>Supabase</li></ul>
+            <p class="links"><a href="https://github.com/divakartika/jak-trans">Code</a><a href="https://jak-trans.streamlit.app">Live app</a></p>
+          </div>
+        </li>
+
+        <li class="stop">
+          <div class="card">
+            <h3>Social media topic analysis</h3>
+            <p>Analyzed anonymous Indonesian-language Twitter complaints with an unsupervised pipeline and found three dominant themes: economic hardship, romantic relationships and interpersonal stress.</p>
+            <ul class="tags"><li>NLP</li><li>LDA topic modeling</li><li>Clustering</li></ul>
+            <p class="links"><a href="https://www.kaggle.com/code/divakartika/marahfess-topic-modelling-with-lda">Kaggle notebook</a></p>
+          </div>
+        </li>
+
+        <li class="stop">
+          <div class="card">
+            <h3>nomiden: a Python package for Indonesian NIK</h3>
+            <p>Parses and enriches Indonesian national ID numbers into structured attributes, so data cleaning takes one line. Includes input validation, edge-case handling and documentation. Published on PyPI.</p>
+            <ul class="tags"><li>Python</li><li>Packaging</li><li>Data cleaning</li></ul>
+            <p class="links"><a href="https://github.com/divakartika/nomiden">Code</a><a href="https://pypi.org/project/nomiden">PyPI</a></p>
+          </div>
+        </li>
+
+        <li class="stop">
+          <div class="card">
+            <h3>Customer churn prediction</h3>
+            <p>An end-to-end pipeline covering data cleaning, feature engineering, model comparison and evaluation, with feature insights to inform retention strategy.</p>
+            <ul class="tags"><li>Python</li><li>Classification</li><li>Feature engineering</li></ul>
+            <p class="links"><a href="https://www.kaggle.com/code/divakartika/churn-prediction">Kaggle notebook</a></p>
+          </div>
+        </li>
+
+
+        <li class="stop">
+          <div class="card">
+            <h3>Rotten Tomatoes analysis</h3>
+            <p>Exploratory analysis and visualization of movie ratings, published as a shareable report.</p>
+            <ul class="tags"><li>R</li><li>EDA</li><li>Data visualization</li></ul>
+            <p class="links"><a href="https://rpubs.com/divakartika/rotten-tomatoes">Report</a></p>
+          </div>
+        </li>
+      </ol>
+      <p>More projects, including a Telegram bot, an OpenCV image filter app and a trip tracker, are on <a href="https://github.com/divakartika">my GitHub</a>.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="sub">Where I’ve applied data work to real decisions.</p>
+
+      <div class="job">
+        <h3>Business Intelligence &amp; Analyst, SeaBank Indonesia</h3>
+        <p class="meta">January 2024 to present</p>
+        <ul>
+          <li>Built a daily fund projection model with Prophet and linear regression at 10% MAPE, helping the Treasury team plan liquidity and investments.</li>
+          <li>Automated 18 branch reports in Python, delivered to 18 inboxes at once, cutting turnaround from about a month to the same day.</li>
+          <li>Powered SeaBank’s two biggest annual campaigns, Pesta Untung SeaBank and the 5th Birthday, by automating campaign reporting and preparing the data for live winner drawings.</li>
+          <li>Built a real-time acquisition monitoring dashboard in Looker Studio, giving Marketing live visibility into new user sign-ups so drops could be flagged to onboarding ops right away.</li>
+          <li>Spotted promo-abusive behavior among new Shopee users and recommended excluding them from a voucher campaign, cutting cost by 50% and raising user quality by 30%.</li>
+          <li>Designed an A/B test for a CRM campaign to compare promotion schemes across user segments.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Data Science Instructor, Algoritma Data Science School</h3>
+        <p class="meta">August 2022 to December 2023</p>
+        <ul>
+          <li>Taught bootcamps for corporate clients including Bank Indonesia, Bank Central Asia and Komisi Pemilihan Umum, with instructor scores of 4.3 to 4.9 out of 5.</li>
+          <li>Built an assignment scoring web app that cut instructors’ review time by 50%.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Rocket Technology Center Intern, BRIN</h3>
+        <p class="meta">July 2021 to September 2021</p>
+        <ul>
+          <li>Simulated a Falcon 9 rocket landing controller with reinforcement learning. The work led to two papers: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197622007886">ScienceDirect</a> and <a href="https://ieeexplore.ieee.org/document/9992304">IEEE Xplore</a>, presented at IEEE ICARES 2022.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">The tools I reach for most.</p>
+      <div class="skills">
+        <div><h3>Languages and data</h3><p>Python, SQL, SparkSQL, R, BigQuery, Airflow</p></div>
+        <div><h3>Machine learning</h3><p>Forecasting, deep learning, reinforcement learning, TensorFlow</p></div>
+        <div><h3>LLMs</h3><p>RAG, embeddings, hybrid search, evaluation</p></div>
+        <div><h3>Reporting and deployment</h3><p>Looker Studio, Streamlit, GCP, Git, CI/CD</p></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education and credentials</h2>
+      <ul class="plain">
+        <li>B.Sc. in Physics, Universitas Indonesia (cum laude, GPA 3.77/4.0)</li>
+        <li>Machine Learning, Bangkit Academy by Google, Gojek, Tokopedia, and Traveloka</li>
+        <li>TensorFlow Developer certified</li>
+        <li>JuaraGCP finisher, Season 11 (2025) and Season 12 (2026)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p>Open to data science and ML roles. The best way to reach me is email.</p>
+    <a href="mailto:divakl.dkl@gmail.com">divakl.dkl@gmail.com</a>
+    <a href="https://github.com/divakartika">GitHub</a>
+    <a href="https://linkedin.com/in/divakartika">LinkedIn</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{var saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
